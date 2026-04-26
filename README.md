@@ -42,8 +42,8 @@ Herramienta web interactiva de estimación de agudeza visual. Presenta letras ti
 
 ```bash
 # 1. Clonar el repositorio
-git clone <repo-url>
-cd digital-vision-test
+git clone https://github.com/scrivx/digital-vision.git
+cd digital-vision
 
 # 2. Instalar dependencias
 pnpm install
@@ -160,53 +160,6 @@ Si no hay calibración guardada, se usan tamaños de fallback optimizados para ~
 - Las condiciones de iluminación de la habitación y el brillo del monitor afectan la percepción real.
 - El test **no evalúa** daltonismo, campo visual, presión intraocular ni ningún otro parámetro clínico.
 - Los resultados no son equivalentes a un examen optométrico profesional.
-
-### Entorno de desarrollo
-
-- En Windows, pnpm usa symlinks en el virtual store que **no funcionan correctamente desde bash de Git Bash / WSL** si pnpm no gestiona el entorno. Usar siempre PowerShell o CMD.
-
 ---
-
-## Variables de entorno
-
-No se requieren variables de entorno para ejecutar el proyecto en desarrollo. El archivo `.env.local` no está incluido porque no hay claves externas.
-
----
-
-## Despliegue
-
-### Vercel (recomendado)
-
-```bash
-pnpm build
-# subir a Vercel desde el dashboard o con la CLI
-vercel deploy
-```
-
-### Docker / servidor propio
-
-```bash
-pnpm build
-pnpm start          # inicia en puerto 3000
-```
 
 > El modelo Whisper se descarga en el navegador del cliente, no en el servidor. No se necesita GPU ni almacenamiento adicional en el servidor.
-
----
-
-## Paleta de colores
-
-| Token | Valor | Uso |
-|---|---|---|
-| Azul principal | `#2563EB` | CTAs, acentos |
-| Fondo | `#F8FAFC` | Fondo general |
-| Texto oscuro | `#0F172A` | Titulares |
-| Verde éxito | `#10B981` | Feedback correcto |
-| Rojo error | `#EF4444` | Feedback incorrecto |
-| Texto secundario | `#475569` | Descripciones |
-
----
-
-## Licencia
-
-Proyecto privado. Todos los derechos reservados.
